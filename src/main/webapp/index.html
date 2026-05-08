@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Sravani ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at center, #1a0000, #000);
+}
+
+/* Center container */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Button */
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    background: red;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 15px red;
+}
+
+/* Message */
+.message {
+    display: none;
+    font-size: 60px;
+    color: #ff1a1a;
+    text-shadow: 0 0 20px red, 0 0 40px pink;
+}
+
+/* Typing effect */
+.typing::after {
+    content: "|";
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* Letter */
+.letter {
+    display: none;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    padding: 20px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid pink;
+    border-radius: 10px;
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+/* Hearts floating */
+.heart {
+    position: absolute;
+    color: red;
+    animation: floatUp linear forwards;
+}
+@keyframes floatUp {
+    0% { transform: translateY(100vh); opacity:1; }
+    100% { transform: translateY(-10vh); opacity:0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <button onclick="startLove()">Open My Heart ❤️</button>
+</div>
+
+<div class="message typing" id="msg"></div>
+
+<div class="letter" id="letter">
+    <h3>💌 My Love Letter</h3>
+    <p>
+        Every moment with you feels magical.<br>
+        You are my happiness, my peace, my everything.<br><br>
+        I love you forever, Sravani ❤️
+    </p>
+</div>
+
+<audio id="music" loop>
+    <source src="your-music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function startLove() {
+    document.querySelector("button").style.display = "none";
+    const msg = document.getElementById("msg");
+    const letter = document.getElementById("letter");
+    const music = document.getElementById("music");
+
+    msg.style.display = "block";
+    music.play().catch(()=>{});
+
+    // Typing animation
+    const text = "I Love You Sravani ❤️";
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            msg.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 100);
+        } else {
+            letter.style.display = "block";
+        }
+    }
+    type();
+
+    // Floating hearts
+    setInterval(() => {
+        const h = document.createElement("div");
+        h.className = "heart";
+        h.innerHTML = "❤️";
+        h.style.left = Math.random()*100 + "vw";
+        h.style.fontSize = (20 + Math.random()*20) + "px";
+        h.style.animationDuration = (4 + Math.random()*3) + "s";
+        document.body.appendChild(h);
+        setTimeout(()=>h.remove(),7000);
+    }, 300);
+
+    // Fireworks hearts
+    document.addEventListener("click", (e) => {
+        for (let i=0;i<15;i++) {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.style.position = "absolute";
+            heart.style.left = e.clientX+"px";
+            heart.style.top = e.clientY+"px";
+
+            const angle = Math.random()*2*Math.PI;
+            const dist = Math.random()*120;
+
+            heart.animate([
+                {transform:"translate(0,0)",opacity:1},
+                {transform:`translate(${Math.cos(angle)*dist}px,${Math.sin(angle)*dist}px)`,opacity:0}
+            ], {duration:1000});
+
+            document.body.appendChild(heart);
+            setTimeout(()=>heart.remove(),1000);
+        }
+    });
+}
+</script>
+
+</body>
+</html>
