@@ -8,7 +8,7 @@
     <!-- Project Details -->
     <groupId>com.loveproject</groupId>
     <artifactId>love-webapp</artifactId>
-    <version>1.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>Love Web Application</name>
