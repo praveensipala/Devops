@@ -5,10 +5,9 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Project Details -->
     <groupId>com.loveproject</groupId>
     <artifactId>love-webapp</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>war</packaging>
 
     <name>Love Web Application</name>
@@ -16,24 +15,18 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!-- Nexus Repository Configuration -->
     <distributionManagement>
 
-        <!-- Release Repository -->
         <repository>
             <id>nexus-releases</id>
-            <name>Nexus Release Repository</name>
-            <url>http://54.90.179.140:8081/repository/test-release/</url>
+            <url>http://18.212.227.181:8081/repository/test-release/</url>
         </repository>
 
-        <!-- Snapshot Repository -->
         <snapshotRepository>
             <id>nexus-snapshots</id>
-            <name>Nexus Snapshot Repository</name>
-            <url>http://54.90.179.140:8081/repository/test-snapshot/</url>
+            <url>http://18.212.227.181:8081/repository/test-snapshot/</url>
         </snapshotRepository>
 
     </distributionManagement>
@@ -43,7 +36,6 @@
 
         <plugins>
 
-            <!-- WAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -52,9 +44,11 @@
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
+
             </plugin>
 
         </plugins>
+
     </build>
 
 </project>
