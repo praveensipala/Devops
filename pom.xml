@@ -21,12 +21,12 @@
 
         <repository>
             <id>test-release</id>
-            <url>http://18.212.227.181:8081/repository/test-release/</url>
+            <url>http://100.31.72.155:8081/repository/test-release/</url>
         </repository>
 
         <snapshotRepository>
             <id>test-snapshot</id>
-            <url>http://18.212.227.181:8081/repository/test-snapshot/</url>
+            <url>http://100.31.72.155:8081/repository/test-snapshot/</url>
         </snapshotRepository>
 
     </distributionManagement>
