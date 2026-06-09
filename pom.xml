@@ -30,7 +30,7 @@
 
         <snapshotRepository>
             <id>test-snapshot</id>
-            <url>http:http://3.91.246.95:8081/repository/test-snapshot/</url>
+            <url>http://3.91.246.95:8081/repository/test-snapshot/</url>
         </snapshotRepository>
 
     </distributionManagement>
