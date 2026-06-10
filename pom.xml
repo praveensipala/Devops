@@ -15,7 +15,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-         <sonar.host.url>http://98.83.110.248:9000/</sonar.host.url>
+         <sonar.host.url>http://18.234.119.12:9000/</sonar.host.url>
          <sonar.login>admin</sonar.login>
          <sonar.password>praveen</sonar.password>
 
@@ -25,12 +25,12 @@
 
         <repository>
             <id>test-release</id>
-            <url>http://3.91.246.95:8081/repository/test-release/</url>
+            <url>http://32.197.130.197:8081/repository/test-release/</url>
         </repository>
 
         <snapshotRepository>
             <id>test-snapshot</id>
-            <url>http://3.91.246.95:8081/repository/test-snapshot/</url>
+            <url>http://32.197.130.197:8081/repository/test-snapshot/</url>
         </snapshotRepository>
 
     </distributionManagement>
