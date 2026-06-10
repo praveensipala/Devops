@@ -5,10 +5,9 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Project Details -->
     <groupId>com.loveproject</groupId>
     <artifactId>love-webapp</artifactId>
-    <version>1.0</version>
+    <version>1.1.2</version>
     <packaging>war</packaging>
 
     <name>Love Web Application</name>
@@ -16,15 +15,31 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+         <sonar.host.url>http://18.234.119.12:9000/</sonar.host.url>
+         <sonar.login>admin</sonar.login>
+         <sonar.password>praveen</sonar.password>
+
+        </properties>
+
+    <distributionManagement>
+
+        <repository>
+            <id>test-release</id>
+            <url>http://32.197.130.197:8081/repository/test-release/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>test-snapshot</id>
+            <url>http://32.197.130.197:8081/repository/test-snapshot/</url>
+        </snapshotRepository>
+
+    </distributionManagement>
 
     <build>
         <finalName>love-webapp</finalName>
 
         <plugins>
 
-            <!-- WAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -33,9 +48,11 @@
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
+
             </plugin>
 
         </plugins>
+
     </build>
 
 </project>
