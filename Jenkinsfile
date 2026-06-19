@@ -59,11 +59,11 @@ post{
 		}
 	
 	success {
-		echo ' Build ${env.BUILD_NUMBER} OF THE JOB ${env.JOB_NAME} COMPLETED SUCCESSFULLY '
+		echo "Build ${env.BUILD_NUMBER} OF THE JOB ${env.JOB_NAME} COMPLETED SUCCESSFULLY"
 		}
 
 	failure {
-		echo ' Build ${env.BUILD_NUMBER} OF THE JOB ${env.JOB_NAME} FAILED CHECK CONSOLE LOGS IN ${env.BUILD_URL} '
+		echo "Build ${env.BUILD_NUMBER} OF THE JOB ${env.JOB_NAME} FAILED CHECK CONSOLE LOGS IN ${env.BUILD_URL}"
 		}
 	}
 }
