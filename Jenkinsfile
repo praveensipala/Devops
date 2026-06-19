@@ -53,17 +53,37 @@ pipeline {
 
 	}
 
-post{
-	always {
-		echo 'pipeline completed'
-		}
-	
-	success {
-		echo "Build ${env.BUILD_NUMBER} OF THE JOB ${env.JOB_NAME} COMPLETED SUCCESSFULLY"
+	post {
+
+		always {
+			echo "========================================="
+			echo "Pipeline execution completed."
+			echo "Job Name      : ${env.JOB_NAME}"
+			echo "Build Number  : ${env.BUILD_NUMBER}"
+			echo "Build Result  : ${currentBuild.currentResult}"
+			echo "Build URL     : ${env.BUILD_URL}"
+			echo "========================================="
 		}
 
-	failure {
-		echo "Build ${env.BUILD_NUMBER} OF THE JOB ${env.JOB_NAME} FAILED CHECK CONSOLE LOGS IN ${env.BUILD_URL}"
+		success {
+			echo "SUCCESS: Build #${env.BUILD_NUMBER} of '${env.JOB_NAME}' completed successfully."
+		}
+
+		failure {
+			echo "FAILURE: Build #${env.BUILD_NUMBER} of '${env.JOB_NAME}' failed."
+			echo "Console Log: ${env.BUILD_URL}console"
+		}
+
+		unstable {
+			echo "UNSTABLE: Build #${env.BUILD_NUMBER} is unstable."
+		}
+
+		aborted {
+			echo "ABORTED: Build #${env.BUILD_NUMBER} was aborted."
+		}
+
+		cleanup {
+			cleanWs()
 		}
 	}
 }
