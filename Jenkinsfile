@@ -47,7 +47,7 @@ pipeline {
 		steps {
 			echo 'Deploying to Tomcat'
 
-			deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://54.224.107.225:8080/')], contextPath: 'love-test', war: '**/*.war'
+			deploy adapters: deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://100.56.231.117:8080/')], contextPath: 'my_love_app', war: '**/*.war'
 			}
 		}
 
@@ -59,11 +59,11 @@ post{
 		}
 	
 	success {
-		echo ' Build ${BUILD_NUMBER} OF THE JOB ${JOB_NAME} COMPLETED SUCCESSFULLY '
+		echo ' Build ${env.BUILD_NUMBER} OF THE JOB ${env.JOB_NAME} COMPLETED SUCCESSFULLY '
 		}
 
 	failure {
-		echo ' Build ${BUILD_NUMBER} OF THE JOB ${JOB_NAME} FAILED CHECK CONSOLE LOGS IN ${BUILD_URL} '
+		echo ' Build ${env.BUILD_NUMBER} OF THE JOB ${env.JOB_NAME} FAILED CHECK CONSOLE LOGS IN ${env.BUILD_URL} '
 		}
 	}
 }

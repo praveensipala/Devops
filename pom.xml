@@ -7,7 +7,7 @@
 
     <groupId>com.loveproject</groupId>
     <artifactId>love-webapp</artifactId>
-    <version>1.1.5-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>war</packaging>
 
     <name>Love Web Application</name>
@@ -15,7 +15,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-         <sonar.host.url>http://18.234.119.12:9000/</sonar.host.url>
+         <sonar.host.url>http://54.167.86.94:9000/</sonar.host.url>
          <sonar.login>admin</sonar.login>
          <sonar.password>praveen</sonar.password>
 
@@ -24,13 +24,13 @@
     <distributionManagement>
 
         <repository>
-            <id>test-release</id>
-            <url>http://32.197.130.197:8081/repository/test-release/</url>
+            <id>test-app-release</id>
+            <url>http://98.84.112.23:8081/repository/test-app-release/</url>
         </repository>
 
         <snapshotRepository>
-            <id>test-snapshot</id>
-            <url>http://32.197.130.197:8081/repository/test-snapshot/</url>
+            <id>test-app-snapshot</id>
+            <url>http://98.84.112.23:8081/repository/test-app-snapshot/</url>
         </snapshotRepository>
 
     </distributionManagement>
